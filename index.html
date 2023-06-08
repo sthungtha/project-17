@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <!-- // PROJECT 11 (index.html) -->
+  <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
+</head>
+
+<body>
+  <header>
+    <!-- bootstrap -->
+    <section id="navbar" class="ui-component">
+      <h2>My personal Website</h2>
+      <nav class="navbar navbar-expand-lg bg-light navigation-border">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Home</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" href="#about">about</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#blog">Blog</a>
+              </li>
+            </ul>
+            <form class="d-flex" role="search">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+          </div>
+        </div>
+      </nav>
+    </section>
+  </header>
+  <main class="grid-container">
+    <section class="fade-in grid-item section-one" id="intro">
+      <h1 class="item left">Intro</h1>
+      <p>The purpose and mission of my site is to build an HTML landing page that includes:</p>
+      <ul>
+        <li>A header and footer with standard elements such as navigation, branding, and search functionality</li>
+        <li>Content area with text and images that explain what you do and how you do it</li>
+        <li>A call-to-action button that encourages visitors to sign up for something (like a request for information where they submit a question and their contact information.</li>
+      </ul>
+      <p>There’s a Blog on the site about My journey to become a web developer and What I’ve found most interesting. There’s a Newsletter form where you can Sign-up for my newsletter.</p>
+      <p>This website created for Project Personal Website: Create an HTML Landing Page. Amazon Software Development Cohort 2. Intermediate/Advanced HTML. 3 - 1.</p>
+    </section>
+    <section class="fade-in grid-item section-two" id="about">
+      <div>
+        <div>
+          <h1 class="item right hero__container">About Me</h1>
+          <div class="hero__image hero__container">
+            <img src="https://ca.slack-edge.com/T04G2E5DLAE-U04HSQ5FXC3-98f89752f4c4-512" alt="person">
+          </div>
+          <p class="hero__container">I am achievement oriented insectionidual, passionate about software with a desire to keep learning new technical skills providing solutions to people’s challenging needs and enjoy working with sectionerse cultures.</p>
+          <div class="hero__buttons hero__container">
+            <button class="read-more-btn" onclick="location.href='https://www.linkedin.com/in/sompobthungtha'" type="button">LinkedIn</button>
+            <button class="contact-me-btn" onclick="location.href='https://trailblazer.me/id/sompobthungtha'" type="button">Trailblazer</button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="fade-in grid-item section-three" id="blog">
+      <p>
+      <h1 class="item left">Blog</h1>
+      <h2 class="item left">My journey to become a web developer</h2>
+      <h3>What I’ve learned so far</h3>
+      <ul class="before-example">
+        <li>The World Wide Web - WWW, How the web works, Career opportunities as a Frontend Developer and related areas, Websites and their types, and how to identify the main parts of the structure of a web page</li>
+        <li>Intro to Hypertext Markup language - HTML, build your Hello World page, and Tools of the trade: text editors, IDEs, and other development tools</li>
+        <li>The structural components of a website, The different HTML tags and HTML symbols and file paths. The second lesson will cover: The definition of HTML multimedia , different types of audio and video file formats and How to create embedded media. The third lesson will review HTML tags and view additional HTML resources.</li>
+        <li>HTML forms, radio, checkbox and buttons. In the second lesson you will learn how to create an HTML form using tags and define a list of HTML elements and attributes. In the third lesson you will learn about web accessibility and inclusive design principles, the different types of disabilities that a user may exhibit when interacting with web pages and the laws surrounding web accessibility.</li>
+      </ul>
+      <h3 class="item left">What I’ve found most interesting</h3>
+      <ol>
+        <li>Project 1: Creating a Simple Page - HTML Basics Review and Recreating an HTML webpage.</li>
+        <li>Project 2: Choose the HTML elements and create an HTML landing page - define a message for your personal website.</li>
+      </ol>
+      </p>
+    </section>
+    <section class="fade-in grid-item section-four" id="newsletter">
+      <h1 class="item right">Sign-up for newsletter</h1>
+      <form class="hero__container" id="contact-form">
+        <input type="text" email="email-input" id="email-input" class="focus-example" placeholder="Enter email">
+        <select name="type-input" id="type-input" class="focus-example">
+          <option value="Client">Client</option>
+          <option value="Employer">Employer</option>
+          <option value="Other">Other</option>
+        </select>
+        <button class="hover-example" type="submit">Sign-up</button>
+      </form>
+      <div id="chart" class="item"></div>
+      <h1 class="item right">Dark/Light Mode Toggle</h1>
+      <div class="container">
+        <h2 class="mode-status">Currently in Light Mode</h2>
+        <label class="toggle-switch">
+          <input type="checkbox" id="mode-toggle">
+          <span class="slider"></span>
+        </label>
+      </div>
+      <h1 class="item right">Image Slider</h1>
+      <div class="container">
+        <div id="slider">
+          <img src="https://picsum.photos/id/1005/300/200" alt="Image 1">
+          <img src="https://picsum.photos/id/1012/300/200" alt="Image 2">
+          <img src="https://picsum.photos/id/1015/300/200" alt="Image 3">
+          <img src="https://picsum.photos/id/1024/300/200" alt="Image 4">
+          <button id="prev">&lt;</button>
+          <button id="next">&gt;</button>
+        </div>
+        <!-- Project 13 -->
+        <h1 class="item right">Example work</h1>
+        <h2 class="mode-status">List Sorter</h2>
+        <div class="container">
+          <input type="text" id="inputList" placeholder="Enter Item">
+          <button onclick="addItem()">Add Item</button>
+          <button onclick="sortList()">Sort</button>
+        </div>
+        <ul id="listItems"></ul>
+      </div>
+    </section>
+  </main>
+  <!-- Project 14 -->
+  <div id="map"></div>
+  <footer class="grid-item footer">
+    <a href="https://www.linkedin.com/in/sompobthungtha/">
+      <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24">
+        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+      </svg>
+  </footer>
+  <!-- // PROJECT 11 (index.html) -->
+  <script type="module">
+    // Import the functions you need from the SDKs you need
+    import {
+      initializeApp
+    } from "https://www.gstatic.com/firebasejs/9.20.0/firebase-app.js";
+    import {
+      getAnalytics
+    } from "https://www.gstatic.com/firebasejs/9.20.0/firebase-analytics.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+      apiKey: "AIzaSyBolbYj6LbdUt2Yhc7AuOM2f_B4H_3YECI",
+      authDomain: "c1-project-11.firebaseapp.com",
+      databaseURL: "https://c1-project-11-default-rtdb.europe-west1.firebasedatabase.app",
+      projectId: "c1-project-11",
+      storageBucket: "c1-project-11.appspot.com",
+      messagingSenderId: "118889403471",
+      appId: "1:118889403471:web:dffde4cd08927dcac3c63a",
+      measurementId: "G-3X0FKRMQ2X"
+    };
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://d3js.org/d3.v5.min.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>

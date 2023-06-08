@@ -1,0 +1,403 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* a sass .scss sheet to produce your css file */
+/* grid organization to text and/or images */
+/* advanced grid */
+.grid-container {
+  display: grid;
+  grid-template-areas: "header header""section-one section-two""section-three section-four""footer footer";
+  grid-column-gap: 25px;
+  grid-row-gap: 25px;
+  padding: 10px
+}
+
+.grid-item {
+  padding: 1rem;
+  font-size: 1rem;
+  /* background-color: lightcyan; */
+}
+
+.header {
+  grid-area: header;
+}
+
+.section-one {
+  grid-area: section-one;
+}
+
+.section-two {
+  grid-area: section-two;
+}
+
+.section-three {
+  grid-area: section-three;
+}
+
+.section-four {
+  grid-area: section-four;
+}
+
+.footer {
+  grid-area: footer;
+}
+
+/* borders */
+.navigation-border {
+  border: 2px solid blue;
+  border-radius: 10px;
+}
+
+/* a font family */
+section {
+  /* font-family: "Roboto"; */
+  font-family: "Poppins", sans-serif;
+}
+
+/* backgrounds and colors to text headings and paragraphs */
+section {
+  /* background-color: lightcyan; */
+}
+
+h2,
+h3 {
+  /* color: darkslategray; */
+}
+
+li,
+p {
+  /* color: darkslateblue; */
+}
+
+/* indentation */
+p {
+  text-indent: 50px;
+}
+
+/* EXAMPLE 1 - :hover */
+.hover-example {
+  width: 200px;
+  border-radius: 25px;
+  font-size: 1.2rem;
+  font-weight: 400;
+  border: 2px solid rgb(98, 117, 117);
+  background: transparent;
+  color: rgb(98, 117, 117);
+  cursor: pointer;
+  transition: all 0.5s ease-out;
+}
+
+/* use of pseudo-class and pseudo-element items */
+.hover-example:hover {
+  /* pseudo class */
+  border-color: rgb(70, 130, 180);
+  background: steelblue;
+  color: rgb(11, 32, 32);
+  font-weight: 600;
+  transition: all 0.5s ease-out;
+}
+
+/* EXAMPLE 2 - :focus */
+.focus-example {
+  border-color: #fff !important;
+  transition: all 0.5s ease-out;
+}
+
+.focus-example::placeholder {
+  /* pseudo element */
+  font-style: italic;
+  font-variant: small-caps;
+  color: rgb(138, 43, 226);
+}
+
+.focus-example:focus {
+  /* pseudo class */
+  border-color: rgb(70, 70, 185) !important;
+  transition: all 0.5s ease-out;
+}
+
+/* EXAMPLE 3 - ::before & ::placeholder */
+.before-example {
+  list-style: none;
+  /* color: #fff; */
+}
+
+.before-example li {
+  margin-bottom: 0.75rem;
+}
+
+.before-example li::before {
+  /* pseudo element */
+  content: "✅";
+  margin-right: 1rem;
+}
+
+/* media queries */
+@media (max-width: 750px) {
+  .grid-container {
+    display: grid;
+    grid-template-areas: "header""section-one""section-two""section-three""section-four""footer";
+    grid-column-gap: 25px;
+    grid-row-gap: 25px;
+    padding: 10px;
+  }
+}
+
+/* css animations */
+.fade-in {
+  animation: fade-in 3s forwards;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+/* flexbox */
+.hero__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: min(100% - 2rem, 1300px);
+  margin-inline: auto;
+  padding: 2rem;
+  animation: fade-in 1.5s forwards;
+}
+
+.hero__buttons {
+  margin-top: 3.5rem;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.hero__buttons>button {
+  padding: 0.7rem 2rem;
+  border-radius: 7px;
+  cursor: pointer;
+  background: transparent;
+  color: rgb(98, 117, 117);
+  border: 2px solid rgb(98, 117, 117);
+}
+
+.hero__image>img {
+  width: 100px;
+  height: 100px;
+}
+
+@media (max-width: 750px) {
+  .hero__container {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .hero__buttons {
+    justify-content: center;
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* 1. Project: Add JavaScript to your personal webpage */
+/* dark/light mode toggle */
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #f0f0f0;
+  color: #333;
+  transition: all 0.4s ease-in;
+}
+
+h1 {
+  text-align: center;
+  margin-top: 1.25rem;
+  /* color: darkslategray; */
+}
+
+.container {
+  display: grid;
+  width: 100%;
+  /* min-height: calc(100vh - 4.25rem); */
+  place-content: center;
+  gap: 1rem;
+  text-align: center;
+}
+
+.dark-mode {
+  background-color: #333;
+  color: #f0f0f0;
+  transition: all 0.4s ease-in;
+}
+
+.toggle-switch {
+  position: relative;
+  display: inline-block;
+  width: 3.75rem;
+  height: 2.13rem;
+  margin-bottom: 0.63rem;
+  margin-inline: auto;
+}
+
+.toggle-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: all 0.4s ease-in;
+  border-radius: 2.13rem;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 1.63rem;
+  width: 1.63rem;
+  left: 0.25rem;
+  bottom: 0.25rem;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+input:checked+.slider {
+  background-color: #2196f3;
+}
+
+input:focus+.slider {
+  box-shadow: 0 0 2px #2196f3;
+}
+
+input:checked+.slider:before {
+  transform: translateX(1.63rem);
+}
+
+/* image slider */
+#slider {
+  position: relative;
+  width: 300px;
+  height: 200px;
+  overflow: hidden;
+}
+
+#slider img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+#slider img.active {
+  opacity: 1;
+}
+
+#light img.active {}
+
+#slider button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  border: none;
+  background-color: transparent;
+  color: white;
+  font-size: 32px;
+  cursor: pointer;
+}
+
+#slider button#prev {
+  left: 10px;
+}
+
+#slider button#next {
+  right: 10px;
+}
+
+/* add two CSS rules one for fade in and fade out using keyframes */
+.fade-in-image {
+  animation: fadeIn 2s;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.fade-out-image {
+  animation: fadeOut 2s;
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+/* Project 10 fade and slide in effect*/
+.item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.5s, transform 0.5s;
+}
+
+.item>p {
+  text-align: center;
+}
+
+.left {
+  transform-origin: left center;
+  transform: translateX(-50%);
+}
+
+.right {
+  transform-origin: right center;
+  transform: translateX(50%);
+}
+
+.slide-in {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Project 13 */
+#listItems {
+  text-align: left;
+}
+
+/* Project 14 */
+#map {
+  height: 220px;
+  width: 100%;
+}
